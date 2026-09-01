@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Términos y Condiciones · Latin American Connection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0b1a2b;
+            font-family: 'Inter', sans-serif;
+            color: #e8edf3;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: linear-gradient(145deg, #0f2238, #0a1a2b);
+            border-radius: 40px;
+            padding: 2.8rem 3rem;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(37, 99, 235, 0.06), transparent 60%);
+            pointer-events: none;
+        }
+
+        /* ----- TIPOGRAFÍA ----- */
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .text-muted {
+            color: #94a9c9;
+            font-size: 0.92rem;
+        }
+
+        .text-gold {
+            color: #f0c27f;
+        }
+
+        .text-accent {
+            color: #6d8fd1;
+        }
+
+        /* ----- HEADER ----- */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-left h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .header-left h1 i {
+            color: #f0c27f;
+            margin-right: 10px;
+        }
+
+        .header-left .sub {
+            font-size: 0.95rem;
+            color: #94a9c9;
+            margin-top: 4px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+        }
+
+        .header-left .sub i {
+            color: #f0c27f;
+            width: 1.2rem;
+        }
+
+        .badge-company {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(6px);
+            padding: 0.6rem 1.4rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #c8d6f0;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+        }
+
+        .badge-company i {
+            color: #f0c27f;
+        }
+
+        /* ----- INTRO ----- */
+        .intro-text {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid #f0c27f;
+            padding: 1.6rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 2.8rem;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-left-width: 4px;
+        }
+
+        .intro-text i {
+            color: #f0c27f;
+            font-size: 1.6rem;
+            margin-top: 2px;
+        }
+
+        .intro-text p {
+            margin: 0;
+            font-size: 0.98rem;
+            color: #d6e0f0;
+        }
+
+        .intro-text p strong {
+            color: #ffffff;
+        }
+
+        /* ----- SECCIONES ----- */
+        .section {
+            margin-bottom: 2.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .section-title i {
+            color: #f0c27f;
+            font-size: 1.3rem;
+            width: 2rem;
+            text-align: center;
+        }
+
+        .section-title .badge-num {
+            background: rgba(240, 194, 127, 0.12);
+            border-radius: 40px;
+            padding: 0 14px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #f0c27f;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        /* ----- TARJETAS Y BLOQUES ----- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .card-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.2s;
+        }
+
+        .card-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .card-item strong {
+            display: block;
+            font-weight: 600;
+            color: #f0e8d8;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .card-item p,
+        .card-item li {
+            font-size: 0.92rem;
+            color: #bcc9e0;
+        }
+
+        .card-item ul {
+            padding-left: 1.2rem;
+            margin: 0.4rem 0;
+        }
+
+        .card-item ul li {
+            list-style-type: '▸ ';
+            padding-left: 0.3rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .list-plain {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-plain li {
+            margin-bottom: 0.25rem;
+            padding: 0.15rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .list-plain li:last-child {
+            border-bottom: none;
+        }
+
+        .list-plain li i {
+            color: #f0c27f;
+            width: 1.4rem;
+            margin-right: 4px;
+        }
+
+        .highlight-box {
+            background: rgba(240, 194, 127, 0.06);
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem;
+            border: 1px solid rgba(240, 194, 127, 0.15);
+            margin-top: 0.8rem;
+        }
+
+        .highlight-box p {
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+            color: #d6e0f0;
+        }
+
+        .highlight-box p i {
+            color: #f0c27f;
+            width: 1.6rem;
+            margin-right: 4px;
+        }
+
+        .text-block {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            padding: 1rem 1.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .text-block p {
+            margin: 0.4rem 0;
+            color: #c8d6f0;
+        }
+
+        .text-block ul {
+            padding-left: 1.5rem;
+            margin: 0.4rem 0;
+        }
+
+        .text-block ul li {
+            color: #bcc9e0;
+            margin-bottom: 0.15rem;
+        }
+
+        .text-block ul li strong {
+            color: #e8edf3;
+        }
+
+        .price-tag {
+            background: rgba(240, 194, 127, 0.1);
+            border-radius: 40px;
+            padding: 0.1rem 1rem;
+            display: inline-block;
+            font-weight: 500;
+            color: #f0c27f;
+            border: 1px solid rgba(240, 194, 127, 0.15);
+            font-size: 0.82rem;
+        }
+
+        .small-meta {
+            font-size: 0.85rem;
+            color: #7a91b5;
+        }
+
+        .mt-1 {
+            margin-top: 0.5rem;
+        }
+
+        .mt-2 {
+            margin-top: 1rem;
+        }
+
+        .inline-icon {
+            margin-right: 8px;
+            color: #f0c27f;
+            width: 1.2rem;
+        }
+
+        /* ----- PLANES (columnas) ----- */
+        .plans-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: space-between;
+        }
+
+        .plans-wrapper>div {
+            flex: 1;
+            min-width: 220px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .plans-wrapper>div p strong {
+            color: #f0e8d8;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer-note {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #7a91b5;
+        }
+
+        .footer-note i {
+            color: #f0c27f;
+            margin-right: 6px;
+        }
+
+        .footer-note .legal {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-left h1 {
+                font-size: 1.7rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .plans-wrapper {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+            }
+
+            .intro-text {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .badge-company {
+                white-space: normal;
+            }
+
+            .footer-note {
+                flex-direction: column;
+                gap: 0.8rem;
+                text-align: center;
+            }
+
+            .footer-note .legal {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .header-left h1 {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .text-block,
+            .highlight-box {
+                padding: 0.8rem 1rem;
+            }
+
+            .card-item {
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        /* scroll suave */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1a2b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f0c27f55;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f0c27f88;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <div class="header-left">
+                <h1><i class="fas fa-tower-broadcast"></i> Términos y Condiciones</h1>
+                <div class="sub">
+                    <span><i class="fas fa-globe-americas"></i> Servicios de Telecomunicaciones</span>
+                    <span><i class="fas fa-map-pin"></i> Lima, Perú</span>
+                </div>
+            </div>
+            <div class="badge-company">
+                <i class="fas fa-building"></i> LATIN AMERICAN CONNECTION S.R.L.
+            </div>
+        </div>
+
+        <!-- ===== INTRO ===== -->
+        <div class="intro-text">
+            <i class="fas fa-file-contract"></i>
+            <p>
+                <strong>Bienvenido al sitio web de LATIN AMERICAN CONNECTION S.R.L. (en adelante, "La Empresa").</strong>
+                Al acceder a este sitio, solicitar cotizaciones o contratar nuestros servicios, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones.
+                <br />
+                <span style="font-size:0.9rem; opacity:0.7;">La Empresa se reserva el derecho de actualizar y/o modificar los Términos y Condiciones que detallamos a continuación en cualquier momento, sin previo aviso. Por esta razón recomendamos revisar los Términos y Condiciones cada vez que utilice la página web.</span>
+            </p>
+        </div>
+
+        <!-- ===== 1. INFORMACIÓN GENERAL ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-info-circle"></i> 1. INFORMACIÓN GENERAL Y DOMICILIO
+            </div>
+            <div class="card-item" style="background:rgba(255,255,255,0.02);">
+                <p><i class="fas fa-building inline-icon"></i> <strong>LATIN AMERICAN CONNECTION S.R.L.</strong> · RUC N° 20600388194</p>
+                <p><i class="fas fa-location-dot inline-icon"></i> Domicilio fiscal en Calle Mayta Capac 113, Urb. Tahuantinsuyo, Lima, Perú.</p>
+                <p class="small-meta">Empresa de telecomunicaciones debidamente constituida en el Perú.</p>
+            </div>
+        </div>
+
+        <!-- ===== 2. COBERTURA ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-map-marked-alt"></i> 2. ÁMBITO DE COBERTURA Y FACILIDAD TÉCNICA
+            </div>
+            <div class="text-block">
+                <p>Nuestros servicios de telecomunicaciones están disponibles única y exclusivamente dentro de zonas seleccionadas de la República del Perú sujetas a facilidad técnica. La oferta comercial se divide geográficamente según se detalla a continuación:</p>
+                <ul>
+                    <li><strong>Zonas Preferenciales:</strong> Distritos de Breña, San Martín de Porres e Independencia.</li>
+                    <li><strong>Otras Zonas:</strong> Todos los demás distritos aptos dentro del territorio nacional con cobertura e infraestructura activa de La Empresa.</li>
+                </ul>
+                <p class="small-meta"><i class="fas fa-tools"></i> La viabilidad final de la instalación queda sujeta a la validación técnica en campo por parte de nuestro personal. Si la vivienda del solicitante no cuenta con las condiciones de acceso necesarias, La Empresa se reserva el derecho de no procesar la instalación.</p>
+            </div>
+        </div>
+
+        <!-- ===== 3. EVALUACIÓN CREDITICIA ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-chart-line"></i> 3. EVALUACIÓN CREDITICIA E INFOCORP PARA LA INSTALACIÓN
+            </div>
+            <div class="text-block">
+                <p>La aprobación de la instalación del servicio está sujeta obligatoriamente a una evaluación crediticia a través de las centrales de riesgo (Infocorp). De acuerdo al reporte obtenido, se aplicarán las siguientes condiciones comerciales para el derecho de instalación:</p>
+                <ul>
+                    <li><strong>Clientes sin deudas reportadas:</strong> El costo por concepto de instalación será de S/ 0.00 (Gratuito).</li>
+                    <li><strong>Clientes con deudas reportadas:</strong> Si el solicitante posee deudas vigentes en el sistema, deberá abonar un pago único por derecho de instalación antes de la visita técnica:
+                        <ul>
+                            <li>Servicios Mono (Solo Internet): S/ 50.00 (Cincuenta y 00/100 Soles).</li>
+                            <li>Servicios Dúo (Internet + Cable): S/ 100.00 (Cien y 00/100 Soles).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 4. PERMANENCIA ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-clock"></i> 4. PERIODO DE VIGENCIA, PERMANENCIA MÍNIMA Y PENALIDAD POR TÉRMINO ANTICIPADO
+            </div>
+            <div class="highlight-box">
+                <p><i class="fas fa-calendar-check"></i> <strong>Permanencia mínima obligatoria de seis (6) meses</strong>, contados a partir del día siguiente de la instalación y activación del servicio.</p>
+                <p><i class="fas fa-rotate-right"></i> Transcurrido dicho plazo, el contrato se renovará de forma automática y sucesiva de manera mensual, salvo que el cliente solicite formalmente la baja del servicio.</p>
+                <p><i class="fas fa-triangle-exclamation" style="color:#f0c27f;"></i> <strong>Penalidad por Término Anticipado:</strong> En caso de que el abonado decida resolver el contrato, solicitar la baja o dé motivo a la resolución del servicio antes de cumplir los primeros seis (6) meses de permanencia, está obligado a cancelar la totalidad de las mensualidades que falten para cumplir el periodo contratado en calidad de penalidad por resolución anticipada, además de la devolución inmediata de los equipos otorgados en comodato.</p>
+            </div>
+        </div>
+
+        <!-- ===== 5. PLANES TARIFARIOS ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-tags"></i> 5. PLANES TARIFARIOS Y TECNOLOGÍA FTTH
+            </div>
+            <p class="text-muted" style="margin-bottom:1rem;">Ofrecemos servicios de conectividad mediante tecnología de vanguardia FTTH (Fiber to the Home / Fibra Óptica al Hogar), asegurando alta estabilidad y simetría. Los precios indicados son mensuales, se facturan bajo la modalidad de mes consumido e incluyen los impuestos de ley:</p>
+
+            <div class="plans-wrapper">
+                <div>
+                    <p><strong><i class="fas fa-house-chimney"></i> A. Tarifario para Breña, San Martín de Porres e Independencia</strong></p>
+                    <ul class="list-plain">
+                        <li><i class="fas fa-wifi"></i> LATIN 400 Mbps: S/ 60.00 (+ 1 IPTV Premium)</li>
+                        <li><i class="fas fa-wifi"></i> LATIN 600 Mbps: S/ 80.00 (+ 1 IPTV Premium)</li>
+                        <li><i class="fas fa-wifi"></i> LATIN 800 Mbps: S/ 100.00 (+ 1 IPTV Premium)</li>
+                        <li><i class="fas fa-wifi"></i> LATIN 1000 Mbps: S/ 120.00 (+ 1 IPTV Premium)</li>
+                        <li><i class="fas fa-tv"></i> Dúo 200 + Cable: S/ 80.00 (+ 1 IPTV Premium)</li>
+                        <li><i class="fas fa-tv"></i> Dúo 400 + Cable: S/ 100.00 (+ 1 IPTV Premium)</li>
+                        <li><i class="fas fa-tv"></i> Dúo 600 + Cable: S/ 120.00 (+ 1 IPTV Premium)</li>
+                        <li><i class="fas fa-tv"></i> Dúo 800 + Cable: S/ 140.00 (+ 1 IPTV Premium)</li>
+                        <li><i class="fas fa-tv"></i> Dúo 1000 + Cable: S/ 160.00 (+ 1 IPTV Premium)</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong><i class="fas fa-city"></i> B. Tarifario para Demás Distritos (Otras Zonas)</strong></p>
+                    <ul class="list-plain">
+                        <li><i class="fas fa-wifi"></i> PREMIUM 500 Mbps: S/ 70.00 (+ 1 IPTV Premium)</li>
+                        <li><i class="fas fa-wifi"></i> PREMIUM 700 Mbps: S/ 80.00 (+ 2 IPTV Premium)</li>
+                        <li><i class="fas fa-wifi"></i> PREMIUM 800 Mbps: S/ 100.00 (+ 2 IPTV Premium)</li>
+                        <li><i class="fas fa-wifi"></i> PREMIUM 1000 Mbps: S/ 130.00 (+ 3 IPTV Premium)</li>
+                    </ul>
+                    <p class="mt-1"><strong><i class="fas fa-tv"></i> C. Planes de Solo Cable</strong></p>
+                    <ul class="list-plain">
+                        <li><i class="fas fa-tv"></i> LATIN CABLE HD: S/ 49.00 (máx 3 TVs)</li>
+                        <li><i class="fas fa-tv"></i> LATIN NEGOCIOS HD: S/ 200.00 (sin límite)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 6. CARACTERÍSTICAS ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-network-wired"></i> 6. CARACTERÍSTICAS DE LOS SERVICIOS, CONECTIVIDAD Y UBICACIÓN DEL ROUTER
+            </div>
+            <div class="text-block">
+                <p><i class="fas fa-check-circle inline-icon"></i> <strong>Garantía de Internet:</strong> En cumplimiento de nuestras políticas de calidad y el marco normativo, La Empresa garantiza al abonado el 70% de la velocidad contratada (tanto de subida como de bajada), medida exclusivamente mediante conexión directa por cable de red (Ethernet) al módem.</p>
+                <p><i class="fas fa-wifi inline-icon"></i> <strong>Modalidad de Conectividad (Solo Wi-Fi):</strong> La Empresa brinda el servicio de internet bajo la modalidad inalámbrica (Conexión Wi-Fi). La Empresa no realiza instalaciones ni tendido de cableado de red de área local (LAN) en el domicilio del cliente para conectar computadoras, consolas u otros periféricos de forma cableada.</p>
+                <p><i class="fas fa-location-dot inline-icon"></i> <strong>Ubicación del Router Principal:</strong> Durante la visita de instalación, el técnico autorizado determinará la ubicación estratégica del router principal. Dicho equipo debe fijarse en un lugar seguro, ventilado y estrictamente fuera del alcance de niños y mascotas para evitar accidentes o daños estructurales.</p>
+                <p><i class="fas fa-triangle-exclamation inline-icon" style="color:#f0c27f;"></i> <strong>Exclusión de Responsabilidad por Reubicación:</strong> Si el cliente rechaza la recomendación del técnico e insiste en colocar el equipo en un lugar de su preferencia que no cumpla con los estándares de seguridad propuestos, el cliente asumirá la total responsabilidad por cualquier daño físico, avería, caída o pérdida que sufra el equipo durante su uso, quedando obligado a pagar el costo de reposición del router si este quedara inoperativo.</p>
+                <p><i class="fas fa-tv inline-icon"></i> <strong>Características del Servicio de Cable:</strong> El servicio de televisión por cable no requiere decodificador. La señal se entrega mediante cableado directo al sintonizador del televisor del usuario. Es responsabilidad del cliente contar con un equipo de televisión compatible con la señal analógica o digital distribuida.</p>
+            </div>
+        </div>
+
+        <!-- ===== 7. INSTALACIÓN DE CABLE ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-cable-car"></i> 7. CONDICIONES DE INSTALACIÓN DE CABLE Y DISTRIBUCIÓN DE PUNTOS
+            </div>
+            <div class="text-block">
+                <p>La habilitación y distribución de la señal de televisión por cable se realizará bajo reglas estrictas según el plan contratado:</p>
+                <p><strong>Para el Plan Cable Domicilio (S/ 49.00):</strong></p>
+                <ul>
+                    <li><strong>Primer Televisor:</strong> Al cancelar el derecho de inscripción/instalación respectivo de S/ 50.00, La Empresa cubre de manera gratuita y sin costo adicional el cableado y los materiales para el primer (1er) televisor.</li>
+                    <li><strong>Segundo y Tercer Televisor:</strong> Se aplicará una de las siguientes dos modalidades:
+                        <ul>
+                            <li><strong>Reutilización de Red Existente:</strong> Si la vivienda cuenta con un cableado interno de tipo RG6 operativo, el personal técnico lo reutilizará y el cliente no cancelará nada (S/ 0.00).</li>
+                            <li><strong>Materiales de La Empresa:</strong> Si no existe infraestructura previa, se facturará según la lista de precios fijos: 1 metro de Fibra Óptica (S/ 1.00), 1 metro de cable coaxial RG6 (S/ 1.00), Splitter de 2 salidas (S/ 8.00), Splitter de 3 salidas (S/ 12.00).</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong>Para el Plan Cable Negocios (S/ 200.00):</strong></p>
+                <ul>
+                    <li>El personal técnico de La Empresa realizará única y exclusivamente la instalación y cableado de un (1) punto de conexión principal.</li>
+                    <li>Al no contar con límite de televisores, es responsabilidad absoluta y exclusiva del cliente comercial realizar el cableado interno, las conexiones y colocar los materiales adicionales necesarios para derivar la señal hacia los demás televisores de su establecimiento. La Empresa queda exenta de realizar trabajos de red interna en esta modalidad.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 8. IPTV PREMIUM ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-gift"></i> 8. BENEFICIO ADICIONAL: CUENTAS IPTV PREMIUM DE CORTESÍA
+            </div>
+            <div class="text-block">
+                <p>El acceso a las cuentas de IPTV PREMIUM se otorga en calidad de obsequio/cortesía según la cantidad asignada a cada plan comercial de internet:</p>
+                <ul>
+                    <li>El beneficio se mantendrá activo única y exclusivamente mientras el abonado se encuentre al día en sus pagos mensuales.</li>
+                    <li>Al ser un valor agregado completamente gratuito, La Empresa no se responsabiliza por variaciones, suspensiones o modificaciones en la grilla de canales externos de la plataforma IPTV.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 9. COMODATO ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-hand-holding"></i> 9. EQUIPAMIENTO EN CALIDAD DE COMODATO
+            </div>
+            <div class="text-block">
+                <p><i class="fas fa-building inline-icon"></i> <strong>Propiedad de los Equipos:</strong> Todos los dispositivos, herramientas y materiales instalados en el domicilio del cliente (Módem/Router ONT, splitters principales, fuentes de alimentación y componentes ópticos) son y seguirán siendo propiedad exclusiva de La Empresa. Estos se entregan única y exclusivamente en calidad de comodato (préstamo gratuito de uso).</p>
+                <p><i class="fas fa-shield inline-icon"></i> <strong>Obligación de Cuidado y Devolución:</strong> El cliente se constituye como custodio legal de dichos equipos y debe velar por su correcto funcionamiento y conservación. En el momento en que se resuelva, rescinda o termine el contrato de servicio (sea antes o después del periodo de 6 meses y por cualquier causa), el cliente queda obligado a devolver la totalidad de los equipos e infraestructura a La Empresa en perfecto estado.</p>
+                <p><i class="fas fa-triangle-exclamation inline-icon" style="color:#f0c27f;"></i> <strong>Penalidad por No Devolución o Daños:</strong> Si el cliente se niega a devolver los equipos tras la baja del servicio, impide el retiro de los mismos por parte del personal técnico autorizado, o si estos presentan daños severos atribuibles a negligencia (como caídas o incidentes descritos en el numeral 6), La Empresa procederá a facturar y cobrar el costo total de reposición de los equipos comerciales vigentes, reservándose el derecho de reportar dicha deuda ante las centrales de riesgo (Infocorp).</p>
+            </div>
+        </div>
+
+        <!-- ===== 10. SOPORTE TÉCNICO ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-toolbox"></i> 10. SOPORTE TÉCNICO Y COSTO POR AVERÍAS INTERNAS / EXTERNAS
+            </div>
+            <div class="text-block">
+                <p><i class="fas fa-check-circle inline-icon" style="color:#6d8fd1;"></i> <strong>Averías Externas (Cobertura al 100%):</strong> El soporte técnico para la resolución de averías, caídas de señal o fallas originadas en la red externa de La Empresa, troncales o por problemas propios de nuestra infraestructura es completamente gratuito. La Empresa cubrirá el 100% del costo de los materiales, repuestos y mano de obra necesarios para restablecer el servicio óptimo.</p>
+                <p><i class="fas fa-wrench inline-icon" style="color:#f0c27f;"></i> <strong>Costo por Avería Interna:</strong> Si se genera un reporte de avería y, tras la visita técnica en campo, se determina que el fallo fue provocado internamente en el domicilio del abonado (por ejemplo: manipulación incorrecta de cables, rotura de fibra interna por mascotas o niños, desconfiguración de equipos por manipulación del usuario, problemas de energía eléctrica del hogar, etc.), el cliente estará obligado a abonar una tarifa de servicio técnico de S/ 20.00 (Veinte y 00/100 Soles), la cual se cargará en su siguiente recibo facturado.</p>
+            </div>
+        </div>
+
+        <!-- ===== 11. FACTURACIÓN ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-credit-card"></i> 11. FACTURACIÓN, SUSPENSIÓN Y RECONEXIÓN
+            </div>
+            <div class="text-block">
+                <p><i class="fas fa-file-invoice inline-icon"></i> <strong>Modalidad de Pago:</strong> El servicio se factura bajo la modalidad de mes consumido. El recibo se emitirá de manera mensual una vez finalizado el periodo de prestación del servicio.</p>
+                <p><i class="fas fa-calendar-times inline-icon"></i> <strong>Fecha de Vencimiento y Suspensión:</strong> El abonado se compromete a pagar el total del recibo antes de la fecha de vencimiento. Ante la falta de pago, La Empresa queda facultada a suspender de forma inmediata el Internet, la señal de Cable y el acceso a las cuentas IPTV Premium de cortesía.</p>
+                <p><i class="fas fa-undo-alt inline-icon"></i> <strong>Costo de Reconexión:</strong> Si el servicio es suspendido por morosidad, el cliente deberá abonar una tarifa de reconexión de S/ 10.00 (Diez y 00/100 Soles), la cual se cobrará junto con la deuda vencida.</p>
+                <p><i class="fas fa-clock inline-icon"></i> <strong>Plazo de Reactivación:</strong> Tras la cancelación de la totalidad de la deuda y el costo de reconexión, La Empresa restablecerá los servicios en un plazo máximo de veinticuatro (24) horas contadas a partir del registro del pago en el sistema.</p>
+            </div>
+        </div>
+
+        <!-- ===== 12. LIBRO DE RECLAMACIONES ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-book"></i> 12. LIBRO DE RECLAMACIONES Y ENTE REGULADOR
+            </div>
+            <div class="text-block">
+                <p>Ponemos a disposición de nuestros usuarios un Libro de Reclamaciones Virtual en este sitio web. Al ser una empresa del sector telecomunicaciones, los reclamos por facturación, averías o calidad se tramitan y resuelven bajo las normas y plazos establecidos por el Organismo Supervisor de Inversión Privada en Telecomunicaciones (OSIPTEL).</p>
+            </div>
+        </div>
+
+        <!-- ===== 13. LEY APLICABLE ===== -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-scale-balanced"></i> 13. LEY APLICABLE Y JURISDICCIÓN
+            </div>
+            <div class="text-block">
+                <p>Estos términos y condiciones se rigen por la legislación de la República del Perú. Cualquier controversia técnica o comercial no resuelta en las instancias previas será sometida a las instancias regulatorias correspondientes o a los tribunales de Lima, Perú.</p>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer-note">
+            <div>
+                <!--<i class="fas fa-phone"></i> Central · --><i class="fas fa-envelope"></i> contacto@latin.pe
+            </div>
+            <div class="legal">
+                <span><i class="fas fa-flag"></i> RUC 20600388194</span>
+                <span><i class="fas fa-calendar"></i> Versión 2026</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

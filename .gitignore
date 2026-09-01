@@ -1,0 +1,4 @@
+# Evitar subir archivos innecesarios
+Thumbs.db
+*.log
+.cache/
