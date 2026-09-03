@@ -4,8 +4,6 @@
    Máxima especificidad para anular estilos del template.
    =========================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 :root {
   --h-brand:    #0b2e6b;
   --h-brand-2:  #00b4ff;
@@ -21,8 +19,10 @@
 html .site-header,
 body .site-header,
 .boxed_wrapper .site-header {
-  position: sticky !important;
+  position: fixed !important;
   top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
   z-index: 99999 !important;
   font-family: 'Inter', 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif !important;
   background: #070e24 !important;
@@ -37,6 +37,7 @@ body .site-header,
   outline: none !important;
   line-height: 0 !important;
   vertical-align: top !important;
+  overflow: hidden !important;
 }
 
 html .site-header.is-scrolled,
@@ -50,12 +51,17 @@ body .site-header.is-scrolled,
 }
 
 /* ===== ELIMINAR LINEA BLANCA - MEGA ESPECIFICO ===== */
+html,
 html body,
 body body,
 .boxed_wrapper body {
   margin: 0 !important;
   padding: 0 !important;
   background: #070e24 !important;
+  border: none !important;
+  outline: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
 }
 
 html .boxed_wrapper,
@@ -105,8 +111,24 @@ body .tp-banner-container,
 html .tp-banner,
 body .tp-banner,
 .boxed_wrapper .tp-banner {
-  margin-top: 0 !important;
+  margin-top: 80px !important;
   padding-top: 0 !important;
+  border-top: none !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+
+/* Eliminar línea negra entre header y hero */
+.site-header + script,
+header.site-header::after {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  overflow: hidden !important;
 }
 
 /* Any element with margin or padding causing white line */
@@ -120,6 +142,55 @@ html body > *:first-child,
 body body > *:first-child {
   margin-top: 0 !important;
   padding-top: 0 !important;
+}
+
+/* Eliminar espacio entre header y hero */
+html .hero,
+body .hero,
+.boxed_wrapper .hero {
+  margin-top: 80px !important;
+  border-top: none !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Cerrar cualquier gap residual entre header y hero */
+html .site-header::after,
+body .site-header::after,
+.boxed_wrapper .site-header::after {
+  content: "" !important;
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  overflow: hidden !important;
+}
+
+/* El script dentro del header no debe crear espacio visible */
+html .site-header > script,
+body .site-header > script,
+.boxed_wrapper .site-header > script {
+  display: block !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+html .main-slider,
+body .main-slider,
+.boxed_wrapper .main-slider {
+  margin-top: 80px !important;
+  border-top: none !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 /* Remove any border or outline that could appear as a line */
@@ -169,7 +240,25 @@ body .boxed_wrapper,
 .boxed_wrapper .boxed_wrapper {
   margin: 0 !important;
   padding: 0 !important;
-  background: #070e24 !important;
+}
+
+html .site-header ~ script,
+body .site-header ~ script,
+.boxed_wrapper .site-header ~ script {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+
+html .site-header ~ *:first-of-type,
+body .site-header ~ *:first-of-type,
+.boxed_wrapper .site-header ~ *:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
 }
 
 html .site-header + *,
@@ -185,7 +274,7 @@ body .site-header ~ .hero,
 html .site-header ~ .main-slider,
 body .site-header ~ .main-slider,
 .boxed_wrapper .site-header ~ .main-slider {
-  margin-top: 0 !important;
+  margin-top: 80px !important;
   padding-top: 0 !important;
 }
 
@@ -316,7 +405,7 @@ body .h-tb-social a:hover,
 html .h-mainbar,
 body .h-mainbar,
 .boxed_wrapper .h-mainbar {
-  background: linear-gradient(135deg, #070e24 0%, #0a1d45 40%, #0d2a5c 70%, #070e24 100%) !important;
+  background: #070e24 !important;
   background-color: #070e24 !important;
   position: relative !important;
   border: none !important;

@@ -617,7 +617,7 @@ li {
     width: 100%;
     min-width: 320px;
     min-height: 400px;
-    overflow: clip;  
+    overflow: hidden;  
 }
 
 /*________________Preloader_______________ (eliminado: ya no se usa) */

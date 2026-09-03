@@ -1,0 +1,594 @@
+/* ===========================================================
+   EFFECTS & ANIMATIONS - latin.pe
+   Efectos visuales modernos para mejorar la experiencia del cliente
+   =========================================================== */
+
+/* ===== SMOOTH SCROLL ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== SCROLL REVEAL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+
+/* ===== RIPPLE EFFECT ON BUTTONS ===== */
+.hero__btn,
+.plan-card__btn,
+.btn-one,
+.btn-two,
+.btn-three {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__btn .ripple,
+.plan-card__btn .ripple,
+.btn-one .ripple,
+.btn-two .ripple,
+.btn-three .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: rippleAnim 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes rippleAnim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ===== FLOATING PARTICLES ===== */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10vh) rotate(720deg);
+  }
+}
+
+/* ===== GLOW PULSE ON CARDS ===== */
+.glow-card {
+  position: relative;
+}
+
+.glow-card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #00b4ff, #78bf55, #0088dd);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+  filter: blur(12px);
+}
+
+.glow-card:hover::after {
+  opacity: 0.4;
+}
+
+/* ===== TEXT GRADIENT ANIMATION ===== */
+.gradient-text-animated {
+  background: linear-gradient(270deg, #00b4ff, #0b2e6b, #78bf55, #00e0ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientTextAnim 6s ease infinite;
+}
+
+@keyframes gradientTextAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== HERO PARALLAX ENHANCEMENTS ===== */
+.hero__slide {
+  will-change: transform, opacity;
+}
+
+.hero__slide.is-active {
+  animation: heroSlideIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes heroSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Ken Burns effect on hero images */
+.hero__slide.is-active .hero__bg,
+.hero__slide.is-active {
+  animation: kenBurns 12s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.08) translate(-1%, -1%);
+  }
+}
+
+/* ===== TV CELL GLOW EFFECT ===== */
+.tv-cell {
+  position: relative;
+}
+
+.tv-cell::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0, 180, 255, 0.4), transparent, rgba(120, 191, 85, 0.3));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.tv-cell:hover::before {
+  opacity: 1;
+}
+
+/* ===== COUNTER ANIMATION ===== */
+.count-up {
+  display: inline-block;
+}
+
+/* ===== PLAN CARD TILT EFFECT ===== */
+.plan-card {
+  perspective: 1000px;
+}
+
+.plan-card__inner {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* ===== MAGNETIC BUTTON EFFECT ===== */
+.hero__btn--primary,
+.plan-card__btn {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero__btn--primary:active,
+.plan-card__btn:active {
+  transform: scale(0.96);
+}
+
+/* ===== SHIMMER EFFECT ===== */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.08) 60%,
+    transparent 100%
+  );
+  animation: shimmerMove 3s ease-in-out infinite;
+}
+
+@keyframes shimmerMove {
+  0% { left: -150%; }
+  100% { left: 150%; }
+}
+
+/* ===== ENHANCED WHATSAPP BUTTON ===== */
+#waButton {
+  animation: waFloat 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#waButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+@keyframes waFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+#waButton::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.4);
+  animation: waPulseRing 2s ease-out infinite;
+}
+
+@keyframes waPulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ===== NAV LINK HOVER UNDERLINE ===== */
+.h-nav > ul > li > a {
+  position: relative;
+}
+
+.h-nav > ul > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #00e0ff;
+  transition: width 0.3s ease, left 0.3s ease;
+  border-radius: 2px;
+}
+
+.h-nav > ul > li > a:hover::after,
+.h-nav > ul > li.current > a::after {
+  width: 60%;
+  left: 20%;
+}
+
+/* ===== IMAGE HOVER ZOOM + OVERLAY ===== */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* ===== STAT NUMBER GLOW ===== */
+.hero__stat b {
+  position: relative;
+}
+
+.hero__stat b::after {
+  content: attr(data-value);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  background: linear-gradient(135deg, #00e0ff, #00b4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: blur(8px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* ===== LOADING SKELETON ===== */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===== BACK TO TOP SMOOTH ===== */
+.scroll-to-top {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(1, 178, 236, 0.5);
+}
+
+/* ===== SECTION DIVIDER WAVE ===== */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+/* ===== CURSOR GLOW (DESKTOP) ===== */
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 180, 255, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  mix-blend-mode: screen;
+}
+
+/* ===== STREAMING CARD PARALLAX ===== */
+.stream-cat-card {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stream-cat-card:hover {
+  transform: translateY(-10px) !important;
+}
+
+/* ===== PLAN CARD NUMBER COUNTER EFFECT ===== */
+.plan-card__amount {
+  position: relative;
+}
+
+.plan-card__amount::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0088dd, #78bf55);
+  border-radius: 3px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.plan-card:hover .plan-card__amount::after {
+  width: 100%;
+}
+
+/* ===== BADGE BOUNCE ===== */
+.plan-card__badge {
+  animation: badgeBounce 2s ease-in-out infinite;
+}
+
+@keyframes badgeBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ===== TV GRID SCANLINE ENHANCED ===== */
+.tv-scanline {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 229, 255, 0.08) 20%,
+    rgba(0, 229, 255, 0.4) 50%,
+    rgba(0, 229, 255, 0.08) 80%,
+    transparent 100%
+  );
+  height: 2px;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+/* ===== FEATURED ROW HOVER GLOW LINE ===== */
+.featured-modern__row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(180deg, #00b4ff, #78bf55);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.featured-modern__row:hover::after {
+  width: 5px;
+}
+
+/* ===== ENHANCED HERO PROGRESS BAR ===== */
+.hero__progress i {
+  position: relative;
+}
+
+.hero__progress i::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 10px;
+  height: 10px;
+  background: #00e0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.6);
+}
+
+/* ===== SUPER SALE STAT COUNTER GLOW ===== */
+.stat-num {
+  position: relative;
+  display: inline-block;
+}
+
+.stat-num::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.stat-item:hover .stat-num::before {
+  opacity: 1;
+}
+
+/* ===== SMOOTH APPEAR FOR IMAGES ===== */
+img {
+  transition: opacity 0.5s ease;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+}
+
+img[loading="lazy"].loaded,
+img.loaded {
+  opacity: 1;
+}
+
+/* ===== MOBILE TOUCH FEEDBACK ===== */
+@media (hover: none) {
+  .plan-card:active .plan-card__inner {
+    transform: scale(0.98);
+  }
+  
+  .stream-cat-card:active {
+    transform: scale(0.98) !important;
+  }
+  
+  .featured-modern__row:active {
+    transform: scale(0.98);
+  }
+}
+
+/* ===== REDUCE MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+}
