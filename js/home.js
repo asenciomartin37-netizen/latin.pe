@@ -5,7 +5,7 @@
     var dotsWrap = hero.querySelector('.hero__dots');
     var progress = hero.querySelector('.hero__progress i');
     var current = 0, timer;
-    var DURATION = 6000;
+    var DURATION = 12000;
 
     slides.forEach(function (s, i) {
         var d = document.createElement('button');
@@ -31,7 +31,13 @@
         var poster = slide.querySelector('.hero__poster');
         if (!video) return;
         loadVideo(slide);
-        video.play().catch(function () {});
+        video.loop = true;
+        video.muted = true;
+        video.currentTime = 0;
+        var playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(function () {});
+        }
         video.oncanplay = function () {
             video.classList.add('is-ready');
             if (poster) poster.classList.add('is-hidden');

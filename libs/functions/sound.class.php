@@ -359,16 +359,16 @@
     </script>
     
 <!-- Popup Promocional -->
-<div id="promoModal" style="display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); align-items: center; justify-content: center; padding: 20px;">
-    <div style="position: relative; max-width: 600px; width: 100%; animation: promoSlideIn 0.5s ease;">
-        <button onclick="closePromoModal()" style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; background: #fff; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 10; transition: transform 0.3s;">
+<div id="promoModal" style="display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0,0,0,0.75); align-items: center; justify-content: center; padding: 20px;">
+    <div id="promoContent" style="position: relative; max-width: 600px; width: 100%; animation: promoSlideIn 0.5s ease;">
+        <button id="promoCloseBtn" style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; background: #fff; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 10; transition: transform 0.3s;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b2e6b" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
         <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.3);">
             <img src="images/propaganda.jpeg" alt="Promoción Latin Cable" style="width: 100%; height: auto; display: block;">
         </div>
         <div style="text-align: center; margin-top: 15px;">
-            <button onclick="closePromoModal()" style="background: rgba(255,255,255,0.9); border: none; padding: 10px 30px; border-radius: 25px; color: #0b2e6b; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s;">Cerrar</button>
+            <button id="promoCloseBtn2" style="background: rgba(255,255,255,0.9); border: none; padding: 10px 30px; border-radius: 25px; color: #0b2e6b; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s;">Cerrar</button>
         </div>
     </div>
 </div>
@@ -392,16 +392,26 @@
             sessionStorage.setItem('promoShown', '1');
         }, 1500);
     }
+    function closePromoModal() {
+        var modal = document.getElementById('promoModal');
+        if (!modal) return;
+        modal.style.display = 'none';
+        modal.parentNode.removeChild(modal);
+        var hero = document.getElementById('hero');
+        if (hero) {
+            var video = hero.querySelector('.hero__slide.is-active .hero__video');
+            if (video) {
+                video.currentTime = 0;
+                video.play().catch(function(){});
+            }
+        }
+    }
+    document.getElementById('promoCloseBtn').addEventListener('click', closePromoModal);
+    document.getElementById('promoCloseBtn2').addEventListener('click', closePromoModal);
+    document.getElementById('promoModal').addEventListener('click', function(e) {
+        if (e.target === this) closePromoModal();
+    });
 })();
-function closePromoModal() {
-    var modal = document.getElementById('promoModal');
-    modal.style.opacity = '0';
-    modal.style.transition = 'opacity 0.3s ease';
-    setTimeout(function() { modal.style.display = 'none'; }, 300);
-}
-document.getElementById('promoModal').addEventListener('click', function(e) {
-    if (e.target === this) closePromoModal();
-});
 </script>
 
    </body>
