@@ -19,7 +19,7 @@ if ( $is_local ) {
 }
 
 // ✅ CONEXIÓN DIRECTA CORREGIDA PARA AIVEN
-define("DB_HOST", "latin-db-asenciomartin37-f92d.aivencloud.com"); 
+define("DB_HOST", "167.172.112.56"); 
 define("DB_PORT", "27821");
 define("DB_DATABASE", "defaultdb");
 define("DB_HOST_USERNAME", "avnadmin");
