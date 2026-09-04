@@ -35,7 +35,7 @@ $dboptions = array(
 //conectarse con el servidor
 //conectarse con el servidor
 try {
-    $dsn = DB_DRIVER . ':host=' . DB_HOST . ';dbname=' . DB_DATABASE . ';charset=utf8mb4';
+ $dsn = DB_DRIVER . ':host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_DATABASE . ';charset=utf8mb4';
     $PDO = new PDO($dsn, DB_HOST_USERNAME, DB_HOST_PASSWORD, $dboptions);
 } catch (Exception $ex) {
     // Esto imprimirá el error real en crudo directamente en la pantalla
