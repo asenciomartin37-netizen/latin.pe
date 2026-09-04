@@ -13,14 +13,16 @@ if ( $is_local ) {
 define( 'HTTP_SERVER', 'http://' . $http_host . '/' );
 define( 'SITE_DIR', 'latin.pe/' );
 }else{
-define( 'HTTP_SERVER', 'https://www.latin.pe' );
+define( 'HTTP_SERVER', 'https://onrender.com' );
 define( 'SITE_DIR', '/' );
 }
 
-define( 'DB_HOST', 'localhost' );
-define( 'DB_HOST_USERNAME', 'root' );
-define( 'DB_HOST_PASSWORD', 'admin123' );
-define( 'DB_DATABASE', 'latincab_canales' );
+define("DB_HOST", "latin-db-asenciomartin37-f92d.aivencloud.com;port=27821"); 
+define("DB_DATABASE", "defaultdb");
+define("DB_HOST_USERNAME", "avnadmin");
+
+define("DB_HOST_PASSWORD", getenv("DB_PASSWORD") ?: "AVNS_DhhuOmzbjqynT7caMbc"); 
+
 
 define( 'URL',HTTP_SERVER . SITE_DIR);
 define( 'SITE','LATIN.PE');
