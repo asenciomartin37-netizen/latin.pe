@@ -33,17 +33,16 @@ $dboptions = array(
 );
 
 //conectarse con el servidor
+//conectarse con el servidor
 try {
     $dsn = DB_DRIVER . ':host=' . DB_HOST . ';dbname=' . DB_DATABASE . ';charset=utf8mb4';
     $PDO = new PDO($dsn, DB_HOST_USERNAME, DB_HOST_PASSWORD, $dboptions);
 } catch (Exception $ex) {
-    error_log('Error de conexión a la base de datos: ' . $ex->getMessage());
-    if (defined('ENVIRONMENT') && ENVIRONMENT === 'development') {
-        echo errorMessage($ex->getMessage());
-    } else {
-        echo errorMessage('No se pudo conectar con la base de datos. Intente más tarde.');
-    }
+    // Esto imprimirá el error real en crudo directamente en la pantalla
+    echo "<h2>Error detectado en la conexión:</h2>";
+    echo "<p style='color:red; font-size:18px;'>" . $ex->getMessage() . "</p>";
     die;
 }
+
 
 ?>
